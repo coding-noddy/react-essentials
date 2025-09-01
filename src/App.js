@@ -33,7 +33,7 @@ function App() {
               image={CORE_CONCEPTS[3].image}
             /> */}
             {CORE_CONCEPTS.map((item) => (
-              <CoreConcept {...item} />
+              <CoreConcept key={item.title} {...item} />
             ))}
           </ul>
         </section>
@@ -42,10 +42,19 @@ function App() {
             <TabButton
               onSelectTab={() => onSelectTab("components")}
               label="Components"
-            />
-            <TabButton onSelectTab={() => onSelectTab("jsx")} label="JSX" />
-            <TabButton onSelectTab={() => onSelectTab("props")} label="Props" />
-            <TabButton onSelectTab={() => onSelectTab("state")} label="State" />
+              isSelected={selectedTopic === "components"}/>
+            <TabButton 
+              onSelectTab={() => onSelectTab("jsx")} 
+              label="JSX" 
+              isSelected={selectedTopic === "jsx"}/>
+            <TabButton 
+              onSelectTab={() => onSelectTab("props")} 
+              label="Props" 
+              isSelected={selectedTopic === "props"}/>
+            <TabButton 
+              onSelectTab={() => onSelectTab("state")} 
+              label="State" 
+              isSelected={selectedTopic === "state"}/>
           </menu>
           <TabContent topic={selectedTopic} />
         </section>

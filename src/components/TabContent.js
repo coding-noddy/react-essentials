@@ -1,5 +1,5 @@
 import { EXAMPLES } from "../data.js";
-import "./TabConent.css";
+import "./TabContent.css";
 
 export default function TabContent({ topic }) {
   const { title, description, code } = EXAMPLES[topic];
